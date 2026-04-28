@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านแหม่ม - ครัวแหม่ม</title>
+    <style>
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', 'Segoe UI', sans-serif;
+            color: white;
+            background-image: url('Images/Hintergrund1.jpg'); /* Achte auf Großschreibung! */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION - Angepasst für Handy */
+        nav {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 5px;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+            font-size: 1.1rem;
+        }
+
+        /* SEKTIONEN */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px; /* Weniger Padding an den Seiten für Handys */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 5rem); /* Schriftgröße passt sich an */
+            margin: 0;
+            color: #ffcc00;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+        }
+
+        h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 20px; color: #ffcc00; }
+
+        p {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            line-height: 1.6;
+            max-width: 850px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+
+        /* Speisekarten-Bild */
+        .menu-image {
+            margin-top: 30px;
+            width: 90%;      /* Standard für kleine Bildschirme */
+            max-width: 350px; /* Maximale Breite auf großen Bildschirmen */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* --- SPEZIELLE ANPASSUNG FÜR HANDYS --- */
+        @media (max-width: 768px) {
+            nav {
+                top: 10px;
+                left: 0;
+                right: 0;
+                transform: none;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                background: rgba(0,0,0,0.8);
+                padding: 10px;
+                gap: 5px;
+            }
+
+            nav a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding-top: 120px; /* Platz für das Menü oben */
+            }
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <a href="#home">หน้าแรก</a>
+    <a href="#speisen">เมนูอาหาร</a>
+    <a href="#zeiten">เวลาทำการ</a>
+    <a href="#kontakt">ติดต่อ</a>
+</nav>
+
+<div class="overlay">
+    <section id="home">
+        <h1>ร้านแหม่ม</h1>
+        <p>ครัวแหม่ม: รสชาติที่บ้านคุณ</p>
+    </section>
+
+    <section id="speisen">
+        <h2>เมนูอาหาร</h2>
+        <p>พบกับเมนูแนะนำและรายการอาหารยอดนิยมของเราได้ที่นี่</p>
+        <img src="Images/Speisekarte.png" alt="Speisekarte" class="menu-image">
+    </section>
+
+    <section id="zeiten">
+        <h2>เวลาทำการ</h2>
+        <p>
+            วันจันทร์ - วันเสาร์: 08:00 - 20:00 น.<br>
+            วันอาทิตย์: ปิดทำการ
+        </p>
+    </section>
+
+    <section id="kontakt">
+        <h2>ที่อยู่</h2>
+        <p style="font-size: 1.2rem;">
+            ถนนบางนา-ตราด กม. 26, เลขที่ 19153<br>
+            ตำบลบางเสาธง อำเภบางเสาธง<br>
+            จังหวัดสมุทรปราการ 10540<br><br>
+            <strong>โทร: +66634376685</strong>
+        </p>
+    </section>
+</div>
+
+</body>
+</html>
